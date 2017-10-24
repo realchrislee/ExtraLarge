@@ -1,13 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import * as SessionApiUtil from './util/session_api_util';
+import configureStore from './store/store';
+import Root from './components/root';
+import * as ApiUtil from './actions/session_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
+  const store = configureStore();
 
-  window.login = SessionApiUtil.login;
-  window.signup = SessionApiUtil.signup;
-  window.logout = SessionApiUtil.logout;
-  
+  window.getState = store.getState;
+  window.dispatch = store.dispatch;
+  window.login = ApiUtil.login;
+  window.signup = ApiUtil.signup;
+  window.logout = ApiUtil.logout;
+
   const root = document.getElementById('root');
-  ReactDOM.render(<h1>Welcome to ExtraLarge!</h1>, root);
+  ReactDOM.render(<Root store={ store }/>, root);
 });
