@@ -18,7 +18,6 @@ class SessionForm extends React.Component {
   }
 
   componentWillUnmount() {
-    // TODO: clear errors if errors exist.
     if (this.props.errors) {
       this.props.clearErrors(this.props.errors);
     }
@@ -36,13 +35,13 @@ class SessionForm extends React.Component {
     this.props.processForm({user});
   }
 
-  navLink() {
-    if(this.props.formType === 'login') {
-      return <Link to='/signup'>sign up instead</Link>;
-    } else {
-      return <Link to='/login'>log in instead</Link>;
-    }
-  }
+  // navLink() {
+  //   if(this.props.formType === 'login') {
+  //     return <Link to='/signup'>Sign up instead</Link>;
+  //   } else {
+  //     return <Link to='/login'>Sign in instead</Link>;
+  //   }
+  // }
 
   renderErrors() {
     return(
@@ -57,33 +56,40 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    const greeting = this.props.formType === 'login' ? 'Welcome Back.' : 'Join ExtraLarge.';
+    // const greeting = this.props.formType === 'login' ? 'Welcome Back.' : 'Join ExtraLarge.';
+    // const greeting2 = this.props.formType === 'login' ? 'Sign in to access your personalized homepage, follow authors and topics you love, and clap for stories that matter to you.' : 'Create an account to personalize your homepage, follow your favorite authors and publications, applaud stories you love, and more.';
+    // const buttonText = this.props.formType === 'login' ? 'Continue' : 'Create Account';
+
     return (
-      <div>
+      <div className={`session-form-container ${this.props.className}`}>
         <form onSubmit={this.handleSubmit}>
-          Welcome to ExtraLarge!
-          <br/>
-          {greeting}
+          <div className='session-greeting-container'>
+            {this.props.greeting}
+            <br/>
+            {this.props.greeting2}
+          </div>
           {this.renderErrors()}
-          <div>
+          <div className="session-form">
             <br/>
-            <label>username
-              <input
-                type='text'
-                value={this.state.username}
-                onChange={this.update('username')}
-                />
-            </label>
+            <input
+              className='session-input'
+              type='text'
+              value={this.state.username}
+              onChange={this.update('username')}
+              placeholder='Username'
+              />
             <br/>
-            <label>Password
-              <input
-                type='password'
-                value={this.state.password}
-                onChange={this.update('password')}
-                />
-            </label>
+            <input
+              className='session-input'
+              type='password'
+              value={this.state.password}
+              onChange={this.update('password')}
+              placeholder='Password'
+              />
             <br/>
-            <input type='submit' value='Continue' /> {this.navLink()}
+            <input className='form-submit' type='submit' value={this.props.buttonText} />
+            <br/>
+            {this.props.navLink}
           </div>
         </form>
       </div>

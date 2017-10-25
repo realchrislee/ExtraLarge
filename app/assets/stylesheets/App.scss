@@ -1,0 +1,39 @@
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  height: 65px;
+  border-bottom: 1px solid rgba(0,0,0,.05);
+  background: white;
+  h1 {
+    margin: auto;
+    font-size: 34px;
+    font-weight: 600;
+  }
+}
+
+.main-div {
+  background: #f0f0f0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-height: 100%;
+  min-width: 100%;
+
+}
+
+.greeting-buttons {
+  display: flex;
+  color: #03a87c;
+  vertical-align: middle;
+}
+
+.signin-button {
+  line-height: 65px;
+  margin-right: 16px;
+}
+
+.signup-button {
+  border: 1px solid #03a87c;
+  border-radius: 5px;
+  padding: 10px;
+}

@@ -9,15 +9,15 @@ class Greeting extends Component {
   render() {
     if(!this.props.currentUser) {
       return (
-        <div>
-          <Link to="/signup">Sign Up</Link>
+        <div className='greeting-buttons'>
+          <Link className='signin-button' to="/login">Sign in</Link>
           <br></br>
-          <Link to="/login">Log In</Link>
+          <Link className='signup-button' to="/signup">Get Started</Link>
         </div>
       );
     } else {
       return (
-        <div>
+        <div className='welcome'>
           <h3>Welcome { this.props.currentUser.username }!</h3>
           <button onClick={ () => this.props.logout() }>Logout</button>
         </div>
