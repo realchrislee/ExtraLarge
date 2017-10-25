@@ -10,9 +10,9 @@ class Greeting extends Component {
     if(!this.props.currentUser) {
       return (
         <div>
-          <Link to="/#/signup">Sign Up</Link>
+          <Link to="/signup">Sign Up</Link>
           <br></br>
-          <Link to="/#/login">Log In</Link>
+          <Link to="/login">Log In</Link>
         </div>
       );
     } else {
