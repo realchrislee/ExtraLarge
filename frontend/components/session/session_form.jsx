@@ -5,10 +5,16 @@ class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
+      email: '',
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if(nextProps.loggedIn) {
+      this.props.history.push('/');
+    }
   }
 
   update(field) {
@@ -23,6 +29,26 @@ class SessionForm extends React.Component {
     this.props.processForm({user});
   }
 
+  navLink() {
+    if(this.props.formType === 'login') {
+      return <Link to='/signup'>sign up instead</Link>;
+    } else {
+      return <Link to='/login'>log in instead</Link>;
+    }
+  }
+
+  renderErrors() {
+    return(
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
   render() {
     const greeting = this.props.formType === 'login' ? 'Welcome Back.' : 'Join ExtraLarge.';
     return (
@@ -31,13 +57,14 @@ class SessionForm extends React.Component {
           Welcome to ExtraLarge!
           <br/>
           {greeting}
+          {this.renderErrors()}
           <div>
             <br/>
             <label>Email
               <input
                 type='text'
-                value={this.state.username}
-                onChange={this.update('username')}
+                value={this.state.email}
+                onChange={this.update('email')}
                 />
             </label>
             <br/>
@@ -49,7 +76,7 @@ class SessionForm extends React.Component {
                 />
             </label>
             <br/>
-            <input type='submit' value='Continue' />
+            <input type='submit' value='Continue' /> {this.navLink()}
           </div>
         </form>
       </div>
