@@ -1,11 +1,11 @@
 .main-header {
   display: flex;
-  justify-content: space-between;
   height: 65px;
   border-bottom: 1px solid rgba(0,0,0,.05);
   background: white;
   padding-right: 25px;
   h1 {
+    display: inline-block;
     margin: auto;
     font-size: 34px;
     font-weight: 600;
@@ -30,7 +30,6 @@
 }
 
 .signin-button {
-  line-height: 65px;
   margin-right: 16px;
 }
 
@@ -39,4 +38,45 @@
   border-radius: 5px;
   padding: 10px;
   height: 20px;
+  margin-right: 16px;
+}
+
+.demo-button {
+
+}
+
+.default-avatar {
+  background: image-url('default-avatar-img.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 100%;
+  position: relative;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.user-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-dropdown {
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  background: white;
+  max-width: 280px;
+  height: 100px;
+  padding: 8px 0;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.25), 0 0 1px rgba(0,0,0,.35);
+  font-size: 15px;
+  text-align: center;
 }
