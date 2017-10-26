@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => {
     errors: state.errors.session,
     formType: 'login',
     navLink: <div>
-                Are you new to ExtraLarge?  <Link to='/signup'>Sign up</Link>
+                Are you new to ExtraLarge?  <Link to='/signup' className='link'>Sign up</Link>
              </div>,
     greeting: <h1 className='session-greeting'>Welcome Back.</h1>,
     greeting2: <h2 className='session-greeting2'>'Log in to access your personalized homepage, follow authors and topics you love, and clap for stories that matter to you.'</h2>,
