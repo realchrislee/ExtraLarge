@@ -4,11 +4,13 @@
   border-bottom: 1px solid rgba(0,0,0,.05);
   background: white;
   padding-right: 25px;
+  justify-content: space-between;
   h1 {
     display: inline-block;
-    margin: auto;
+    margin-left: 44%;
     font-size: 34px;
     font-weight: 600;
+    align-self: center;
   }
 }
 
