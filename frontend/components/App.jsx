@@ -1,6 +1,5 @@
 import React from 'react';
 import GreetingContainer from './greeting/greeting_container';
-import SessionFormContainer from './session/session_form_container';
 import SignupContainer from './session/signup_container';
 import LoginContainer from './session/login_container';
 import { AuthRoute } from '../util/route_util';

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import * as ApiUtil from './actions/session_actions';
+import * as ApiUtil from './util/story_api_util';
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -16,9 +16,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.login = ApiUtil.login;
-  window.signup = ApiUtil.signup;
-  window.logout = ApiUtil.logout;
+  window.fetchStories = ApiUtil.fetchStories;
+  window.fetchStory = ApiUtil.fetchStory;
+  window.createStory = ApiUtil.createStory;
+  window.updateStory = ApiUtil.updateStory;
+  window.deleteStory = ApiUtil.deleteStory;
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store }/>, root);

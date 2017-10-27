@@ -10,6 +10,7 @@ User.destroy_all
 5.times do |index|
   User.create!(username: Faker::Cat.unique.name, password: 'password')
 end
+User.create!(username: 'guest', password: 'guestpass')
 
 Story.destroy_all
 15.times do |index|

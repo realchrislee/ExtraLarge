@@ -13,8 +13,10 @@ const mapStateToProps = (state, ownProps) => {
                Already have an account?  <Link to='/login' className='link'>Log in</Link>
            </div>,
     greeting: <h1 className='session-greeting'>Join ExtraLarge.</h1>,
-    greeting2: <h2 className='session-greeting2'>Create an account to personalize your homepage, follow your favorite authors and publications, applaud stories you love, and more.</h2>,
-    buttonText: 'Create Account',
+    greeting2: <h2 className='session-greeting2'>
+                  Create an account to personalize your homepage, follow your favorite authors and publications, applaud stories you love, and more.
+                </h2>,
+    buttonText: 'Create Account'
   };
 };
 

@@ -6,7 +6,8 @@ class SessionForm extends React.Component {
     super(props);
     this.state = {
       username: '',
-      password: ''
+      password: '',
+      name: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -35,7 +36,7 @@ class SessionForm extends React.Component {
     this.props.processForm({user});
   }
 
-  
+
   // navLink() {
   //   if(this.props.formType === 'login') {
   //     return <Link to='/signup'>Sign up instead</Link>;
@@ -60,7 +61,12 @@ class SessionForm extends React.Component {
     // const greeting = this.props.formType === 'login' ? 'Welcome Back.' : 'Join ExtraLarge.';
     // const greeting2 = this.props.formType === 'login' ? 'Sign in to access your personalized homepage, follow authors and topics you love, and clap for stories that matter to you.' : 'Create an account to personalize your homepage, follow your favorite authors and publications, applaud stories you love, and more.';
     // const buttonText = this.props.formType === 'login' ? 'Continue' : 'Create Account';
-
+    const nameInput = this.props.formType === 'login' ? '' : <input type='text'
+                  className='session-input'
+                  value={this.state.name}
+                  onChange={this.update('name')}
+                  placeholder='Name'
+                  />;
     return (
       <div className={`session-form-container ${this.props.className}`}>
         <form onSubmit={this.handleSubmit}>
@@ -71,6 +77,7 @@ class SessionForm extends React.Component {
           </div>
           {this.renderErrors()}
           <div className="session-form">
+            {nameInput}
             <br/>
             <input
               className='session-input'
