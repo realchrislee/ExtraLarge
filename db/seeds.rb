@@ -6,11 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-users = User.create([
-  { username: 'aaron', password: 'password' },
-  { username: 'max', password: 'password' },
-  { username: 'patrick', password: 'password' },
-  { username: 'raymond', password: 'starwars' },
-  { username: 'steven', password: 'password' },
-  { username: 'guest', password: 'guestpass' }
-])
+User.destroy_all
+5.times do |index|
+  User.create!(username: Faker::Cat.unique.name, password: 'password')
+end
+
+Story.destroy_all
+15.times do |index|
+  Story.create!(
+      title: Faker::RickAndMorty.unique.quote,
+      body: Faker::Lorem.paragraph,
+      author_id: User.all.sample.id
+      )
+end
