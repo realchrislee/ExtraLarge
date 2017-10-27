@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import * as ApiUtil from './util/story_api_util';
+import * as ApiUtil from './actions/story_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;

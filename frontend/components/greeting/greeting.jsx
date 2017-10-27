@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class Greeting extends Component {
   constructor(props) {
@@ -33,7 +33,7 @@ class Greeting extends Component {
         <div className='greeting-buttons'>
           <Link className='signin-button' to="/login">Sign in</Link>
           <br></br>
-          <Link className='signup-button' to="/signup">Get Started</Link>
+          <Link className='signup-button' to="/signup">Get started</Link>
           <br/>
           <button onClick={this.handleGuestLogin} className='demo-button' >Demo Login</button>
         </div>
@@ -45,8 +45,13 @@ class Greeting extends Component {
             <img className='default-avatar'></img>
           </button>
             <div id='user-dropdown' className='user-dropdown hidden'>
-              <button onClick={ () => this.props.logout() }>Logout</button>
+              <ul>
+                <li>
+                  <button onClick={ () => this.props.logout() }>Sign out</button>
+                </li>
+              </ul>
             </div>
+            <div className='arrow-up'></div>
         </div>
       );
     }

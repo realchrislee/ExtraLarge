@@ -7,13 +7,17 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
-5.times do |index|
-  User.create!(username: Faker::Cat.unique.name, password: 'password')
+5.times do
+  User.create!(
+      name: Faker::Cat.name,
+      username: Faker::Internet.unique.user_name,
+      password: 'password'
+      )
 end
-User.create!(username: 'guest', password: 'guestpass')
+User.create!(name: 'guest', username: 'guest', password: 'guestpass')
 
 Story.destroy_all
-15.times do |index|
+15.times do
   Story.create!(
       title: Faker::RickAndMorty.unique.quote,
       body: Faker::Lorem.paragraph,

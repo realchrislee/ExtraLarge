@@ -49,7 +49,7 @@ class SessionForm extends React.Component {
     return(
       <ul>
         {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
+          <li className='error'key={`error-${i}`}>
             {error}
           </li>
         ))}
@@ -65,7 +65,7 @@ class SessionForm extends React.Component {
                   className='session-input'
                   value={this.state.name}
                   onChange={this.update('name')}
-                  placeholder='Name'
+                  placeholder='Full Name'
                   />;
     return (
       <div className={`session-form-container ${this.props.className}`}>

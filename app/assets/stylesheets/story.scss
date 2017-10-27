@@ -1,0 +1,49 @@
+.landing-continer {
+  display: block;
+}
+
+.landing-div {
+  padding: 15px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  display: flex!important;
+}
+
+.story-index-list {
+  padding: 15px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  margin-bottom: 40px;
+
+// This column solution is thanks to  Roko C. Buljan at Stack Overflow
+// @ this article https://stackoverflow.com/questions/12332528/how-to-display-list-items-as-columns
+
+ -webkit-column-width: 250px;
+  -moz-column-width: 250px;
+  -o-column-width: 250px;
+  -ms-column-width: 250px;
+  column-width: 250px;
+  column-count: 2;
+
+ -webkit-column-rule-style: hidden;
+  -moz-column-rule-style: hidden;
+  -o-column-rule-style: hidden;
+  -ms-column-rule-style: hidden;
+  column-rule-style: hidden;
+}
+
+.story-index-list li:first-child {
+  margin: 0;
+}
+
+.story-index-item {
+  background: gray;
+  margin-top: 20px;
+}
+
+// background-image:url(https://cdn-images-1.medium.com/max/1000/1*NV54YLXyvmeUtCXSPHJq5g.png); background-position: bottom center;
