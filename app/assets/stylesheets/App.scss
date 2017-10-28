@@ -84,7 +84,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  min-width: 25%;
+  min-width: 273px;
 }
 
 .user-dropdown {
@@ -110,6 +110,7 @@
     line-height: 1.4;
     white-space: nowrap;
     transition: .1s background-color,.1s border-color,.1s color,.1s fill;
+
   }
 }
 
