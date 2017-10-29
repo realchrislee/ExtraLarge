@@ -47,6 +47,9 @@ class Greeting extends Component {
             <div id='user-dropdown' className='user-dropdown hidden'>
               <ul>
                 <li>
+                  <Link to='/new-story' className='dd-link'>New Story</Link>
+                </li>
+                <li>
                   <button onClick={ () => this.props.logout() }>Sign out</button>
                 </li>
               </ul>

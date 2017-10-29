@@ -51,9 +51,9 @@ class StoryIndex extends React.Component {
       } else {
         return (
           <div>
-            <ul className='story-index-list'>
+            <div className='story-index-list'>
               {stories}
-            </ul>
+            </div>
           </div>
         );
       }

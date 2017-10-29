@@ -3,11 +3,16 @@ import { Link, withRouter } from 'react-router-dom';
 
 const StoryIndexItem = ({ story, router, deleteStory, history }) => {
   return (
-    <li className='story-index-item'>
-      <Link className='link' to={`/api/stories/${story.id}`}>
-        {story.title}
-      </Link>
-    </li>
+    <div className='story-index-div'>
+      <div className='story-left-div'>
+        <h1>test</h1>
+      </div>
+      <div className='story-right-div'>
+          <Link className='link' to={`/api/stories/${story.id}`}>
+            {story.title}
+          </Link>
+      </div>
+    </div>
   );
 };
 
