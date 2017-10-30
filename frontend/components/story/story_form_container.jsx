@@ -11,7 +11,11 @@ const mapStateToProps = (state, ownProps) => {
     story = state.entities.stories[ownProps.match.params.id];
     formType = 'edit';
   }
-  return { story, formType };
+  return {
+    story,
+    formType,
+    currentUser: state.session.currentUser
+  };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {

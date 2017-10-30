@@ -4,9 +4,13 @@ import MyShow from './my_show';
 import { fetchStories, deleteStory, updateStory } from '../../actions/story_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  let stories = state.entities.stories.filter(story => story.author_id === state.session.currentUser.id);
+  let stories = [];
+  if (state.session.currentUser) {
+    stories = state.entities.stories.filter(story => story.author_id === state.session.currentUser.id);
+  }
   return {
-    stories
+    stories,
+    currentUser: state.session.currentUser
   };
 };
 

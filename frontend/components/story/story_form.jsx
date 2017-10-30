@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 
 class StoryForm extends React.Component {
   constructor(props) {
@@ -31,6 +32,7 @@ class StoryForm extends React.Component {
   }
 
   render() {
+    if(!this.props.currentUser) return <Redirect to='/' />;
     const text = this.props.formType === 'new' ? 'Create Story' : 'Update Story';
 
     return (

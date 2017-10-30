@@ -1,6 +1,6 @@
 import React from 'react';
 import MyShowItem from './my_show_item';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 class MyShow extends React.Component {
   componentDidMount() {
@@ -8,6 +8,7 @@ class MyShow extends React.Component {
   }
 
   render() {
+    if(!this.props.currentUser) return <Redirect to='/' />;
     const stories = this.props.stories.map((story, i) => {
       return (
         <MyShowItem
