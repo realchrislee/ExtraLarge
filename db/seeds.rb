@@ -20,7 +20,13 @@ Story.destroy_all
 15.times do
   Story.create!(
       title: Faker::RickAndMorty.unique.quote,
-      body: Faker::Lorem.paragraph,
+      body: "How does the famine lust? The sloppy fabric bubbles into the drunk populace. The tactic bucks before an unseen! Will the twisted sister wrong the whale? The behavior rattles! The touched sauce springs onto the academic drift.
+      
+      The need cruises below an atmosphere! Will a regular example bottle the humble parameter? A creature spins in the engaging eye. The incident map steams across the arena. Behind the shorthand cries an acid havoc.
+
+      Why can't the conductor rot on top of the overdue ward? Why does a predicted physics judge the slipping cathedral? How will the tiger quibble? The discovery hesitates? Will a sarcasm adopt a situated cheer? A pending track sketches the trash.
+
+      The excess stretches? Inside a destined gutter farms the attack borderline. An outcry enters? The lecture discriminates your scattering believer. An incorporating newspaper kids without each antique.",
       author_id: User.all.sample.id
       )
 end

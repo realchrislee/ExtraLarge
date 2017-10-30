@@ -64,9 +64,9 @@
   margin-top: 30px;
   margin-bottom: 40px;
   min-height: 800px;
-  overflow: scroll;
   display: flex;
   flex-flow: wrap;
+  min-width: 890px;
 
 // This column solution is thanks to  Roko C. Buljan at Stack Overflow
 // @ this article https://stackoverflow.com/questions/12332528/how-to-display-list-items-as-columns
@@ -97,7 +97,7 @@
 }
 
 .story-left-div {
-  width: 49%;
+  width: 200px;
   border-right: 1px solid rgba(0,0,0,.1)!important;
 }
 
@@ -113,5 +113,7 @@
   background: gray;
   margin-top: 20px;
 }
+
+
 
 // background-image:url(https://cdn-images-1.medium.com/max/1000/1*NV54YLXyvmeUtCXSPHJq5g.png); background-position: bottom center;

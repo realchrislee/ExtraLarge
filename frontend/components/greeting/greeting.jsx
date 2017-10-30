@@ -50,6 +50,9 @@ class Greeting extends Component {
                   <Link to='/new-story' className='dd-link'>New Story</Link>
                 </li>
                 <li>
+                  <Link to='/me/stories' className='dd-link'>Stories</Link>
+                </li>
+                <li>
                   <button onClick={ () => this.props.logout() }>Sign out</button>
                 </li>
               </ul>
