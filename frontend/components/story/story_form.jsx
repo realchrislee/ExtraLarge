@@ -40,9 +40,10 @@ class StoryForm extends React.Component {
   }
 
   renderErrors() {
+    let errors = this.props.errors ? [] : this.props.errors;
     return(
       <ul>
-        {this.props.errors.map((error, i) => (
+        {errors.map((error, i) => (
           <li
             className='error' key={`error-${i}`}>
             {error}
