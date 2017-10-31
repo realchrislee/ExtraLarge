@@ -24,15 +24,25 @@ class StoryShow extends React.Component {
       const storyPs = story.body.split('\n').map((p, i) => <p key={i}>{p}</p>);
       return (
         <article className='article'>
-          <header className='article-header'>
-
-          </header>
+          <div className='story-user'>
+            <div className='story-avatar'>
+              <img
+                src={this.props.currentUser.avatar_url}
+                className='story-avatar-img'
+                ></img>
+            </div>
+            <div className='author-info'>
+              <div className='author-name'>
+                <h5>{this.props.currentUser.name}</h5>
+              </div>
+            </div>
+          </div>
+          <div className='section-figure'>
+            <img src={story.image_url} />
+          </div>
           <div className='article-div'>
             <section className='section'>
               <div className='section-content'>
-                <div className='section-figure'>
-
-                </div>
                 <div className='section-title'>
                   <h1>{ story.title }</h1>
                 </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 class StoryForm extends React.Component {
   constructor(props) {
@@ -18,9 +18,17 @@ class StoryForm extends React.Component {
     this.setState(newProps.post);
   }
 
+  componentWillUnmount() {
+    if (this.props.errors) {
+      this.props.clearErrors(this.props.errors);
+    }
+  }
+
   update(field) {
     return e => {
-      this.setState({[field]: e.target.value});
+      this.setState({
+        [field]: e.target.value
+      });
     };
   }
 
@@ -31,28 +39,54 @@ class StoryForm extends React.Component {
     });
   }
 
+  renderErrors() {
+    return(
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li
+            className='error' key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
   render() {
     if(!this.props.currentUser) return <Redirect to='/' />;
-    const text = this.props.formType === 'new' ? 'Create Story' : 'Update Story';
 
     return (
       <div className='story-div'>
-        <h3>{text}</h3>
+        {this.renderErrors()}
+        <div className='story-user'>
+          <div className='story-avatar'>
+            <img
+              src={this.props.currentUser.avatar_url}
+              className='story-avatar-img'
+              ></img>
+          </div>
+          <div className='author-info'>
+            <div className='author-name'>
+              <h5>{this.props.currentUser.name}</h5>
+            </div>
+          </div>
+        </div>
         <form className='story-form' onSubmit={this.handleSubmit}>
           <br/>
           <input
             type='text'
             value={this.state.title}
-            onChange={this.update('title')} />
+            onChange={this.update('title')}
+            placeholder='Title' />
           <br/>
-          <label>Body
-            <br/>
-            <textarea
-              value={this.state.body}
-              onChange={this.update('body')} />
-          </label>
-
-          <input type='submit' value={text} />
+          <br/>
+          <textarea
+            value={this.state.body}
+            onChange={this.update('body')}
+            placeholder='Tell your story...'
+            />
+          <br/>
+          <input type='submit' value='Publish' />
         </form>
       </div>
     );

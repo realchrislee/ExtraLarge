@@ -62,3 +62,7 @@
 .error {
   color: red;
 }
+
+.error:last-of-type {
+  padding-bottom: 10px;
+}

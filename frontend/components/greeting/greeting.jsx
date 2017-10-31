@@ -42,12 +42,12 @@ class Greeting extends Component {
       return (
         <div className='user-avatar'>
           <button id='user-dropdown-button' onClick={this.handleDropdown} className='user-dropdown-button'>
-            <img src={this.props.currentUser.avatar_url} className='default-avatar'></img>
+            <img src={this.props.currentUser.avatar_url} className='user-avatar-img'></img>
           </button>
             <div id='user-dropdown' className='user-dropdown hidden'>
               <ul>
                 <li>
-                  <Link to='/new-story' className='dd-link'>New Story</Link>
+                  <Link to='/new-story' className='dd-link'>New story</Link>
                 </li>
                 <li>
                   <Link to='/me/stories' className='dd-link'>Stories</Link>

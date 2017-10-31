@@ -15,7 +15,7 @@ import { Route, Link } from 'react-router-dom';
 
 const App = (props) => (
   <div className='main-div'>
-    <header className='main-header'>
+    <div className='main-header'>
       <a className="about" href="#">About membership</a>
       <div className='nav-div'>
         <Link to='/'>ExtraLarge</Link>
@@ -23,7 +23,7 @@ const App = (props) => (
       <div className='greeting-div'>
         <GreetingContainer />
       </div>
-    </header>
+    </div>
 
     <AuthRoute path="/login" component={ LoginContainer } />
     <AuthRoute path="/signup" component={ SignupContainer } />
