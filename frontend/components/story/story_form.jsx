@@ -36,16 +36,14 @@ class StoryForm extends React.Component {
     const text = this.props.formType === 'new' ? 'Create Story' : 'Update Story';
 
     return (
-      <div>
+      <div className='story-div'>
         <h3>{text}</h3>
-        <form onSubmit={this.handleSubmit}>
+        <form className='story-form' onSubmit={this.handleSubmit}>
           <br/>
-          <h3
+          <input
+            type='text'
             value={this.state.title}
-            onChange={this.update('title')}
-            contentEditable='true'
-            data-placeholder={this.state.title}
-            ></h3>
+            onChange={this.update('title')} />
           <br/>
           <label>Body
             <br/>

@@ -42,7 +42,7 @@ class Greeting extends Component {
       return (
         <div className='user-avatar'>
           <button id='user-dropdown-button' onClick={this.handleDropdown} className='user-dropdown-button'>
-            <img className='default-avatar'></img>
+            <img src={this.props.currentUser.avatar_url} className='default-avatar'></img>
           </button>
             <div id='user-dropdown' className='user-dropdown hidden'>
               <ul>
@@ -53,7 +53,7 @@ class Greeting extends Component {
                   <Link to='/me/stories' className='dd-link'>Stories</Link>
                 </li>
                 <li>
-                  <button onClick={ () => this.props.logout() }>Sign out</button>
+                  <button className='dd-link' onClick={ () => this.props.logout() }>Sign out</button>
                 </li>
               </ul>
             </div>

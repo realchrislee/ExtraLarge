@@ -1,7 +1,6 @@
 .main-header {
   display: flex;
   height: 65px;
-  border-bottom: 1px solid rgba(0,0,0,.05);
   background: white;
   padding-right: 25px;
   justify-content: space-between;
@@ -9,6 +8,7 @@
     display: flex;
     min-width: 300px;
     justify-content: flex-end;
+    font-family: 'Playfair Display', serif;
     a {
       font-size: 34px;
       font-weight: 900;
@@ -25,6 +25,7 @@
   // left: 0;
   // min-height: 100%;
   // min-width: 100%;
+  font-family: 'Roboto', sans-serif;
 }
 
 .main-div {
@@ -34,7 +35,8 @@
   left: 0;
   min-height: 100%;
   min-width: 100%;
-
+  display: flex;
+  flex-direction: column;
 }
 
 .greeting-buttons {
@@ -65,7 +67,6 @@
 }
 
 .default-avatar {
-  background: image-url('default-avatar-img.png');
   background-size: 100%;
   background-repeat: no-repeat;
   width: 32px;
@@ -89,6 +90,7 @@
 
 .user-dropdown {
   position: absolute;
+  align-items: flex-end;
   top: 48.5px;
   right: 6px;
   background: white;
@@ -102,17 +104,31 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  button {
+  -webkit-tap-highlight-color: transparent;
+  .dd-link {
+    display: block;
+    height: 22px;
     padding: 7px 25px;
     text-align: left;
+    font-size: 14px;
     width: 100%;
-    max-width: 230px;
+    min-width: 180px;
+    max-width: 180px;
     line-height: 1.4;
     white-space: nowrap;
+    border-color: rgba(0,0,0,.68);
+    color: rgba(0,0,0,.68);
     transition: .1s background-color,.1s border-color,.1s color,.1s fill;
-
+    font-family: 'Roboto', sans-serif;
+  }
+  button {
+    margin-top: 410px;
+  }
+  .dd-link:hover {
+    color: black;
   }
 }
+
 
 // .arrow-up {
 //   width: 0;

@@ -1,8 +1,8 @@
 
-html, body, header, nav, h1, a,
-ul, li, strong, main, button, i,
-section, img, div, h2, p, form,
-fieldset, label, input, textarea,
+html, header, nav, h1,
+ul, li, strong, main, i,
+section, img, div, h2, form,
+fieldset, label,
 span, article, footer, time, small {
   margin: 0;
   padding: 0;
@@ -16,6 +16,40 @@ span, article, footer, time, small {
   box-sizing: inherit;
   background: transparent;
   font-family: 'Playfair Display', serif;
+}
+
+body, button, textarea, input {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent;
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent;
+}
+
+p {
+  // font-family: 'Merriweather', serif;
+  font-family: 'Source Serif Pro', serif;
 }
 
 ul {

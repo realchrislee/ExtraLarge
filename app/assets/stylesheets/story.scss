@@ -1,5 +1,6 @@
 .landing-continer {
   display: block;
+  border-top: 1px solid rgba(0,0,0,.05);
 }
 
 .landing-div {
@@ -23,17 +24,18 @@
   margin-bottom: 40px;
   font-size: 19px;
   line-height: 24px;
-  font-style: normal;
+  font-family: 'Roboto', sans-serif;
 }
 
 .landing-buttons-div {
   height: 37px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .landing-signup-button {
   min-height: 35px!important;
   line-height: 35px;
-  color: rgba(255, 255, 255, .97);
+  color: rgba(255, 255, 255, .99);
   background: #292929;
   border-radius: 4px;
   margin-right: 8px;
@@ -43,16 +45,27 @@
 }
 
 .landing-learn-more {
-  height: 35px;
+  min-height: 35px!important;
+  line-height: 35px;
+  border-radius: 4px;
+  margin-right: 8px;
+  padding: 10px 17px;
+  font-size: 14px;
+  font-weight: 200;
+  border: 1px solid #292929;
 }
 
 .landing-right-div {
-  min-height: 330px;
-  min-width: 472.5px;
+  width: 50%;
+  height: auto;
   background-image: url(https://cdn-images-1.medium.com/max/1000/1*NV54YLXyvmeUtCXSPHJq5g.png);
   background-position: bottom center;
-  background-size: 100%;
+  background-size: contain;
   background-repeat: no-repeat;
+}
+
+.landing-left-div {
+  width: 50%;
 }
 
 .story-index-list {
@@ -114,6 +127,35 @@
   margin-top: 20px;
 }
 
+.story-form {
+  width: 80%;
+  margin: 0 auto;
+}
 
+.article-div {
+  max-width: 740px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+  width: 100%;
+}
 
+.section-title {
+  font-weight: 600;
+  font-size: 42px;
+  color: rgba(0,0,0,.84);
+  h1 {
+    font-family: 'Lato', sans-serif;
+  }
+}
+
+.section-inner {
+  color: rgba(0,0,0,.74);
+  p {
+    margin-top: 38px;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 1.58;
+  }
+}
 // background-image:url(https://cdn-images-1.medium.com/max/1000/1*NV54YLXyvmeUtCXSPHJq5g.png); background-position: bottom center;

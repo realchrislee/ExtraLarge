@@ -21,6 +21,7 @@ class StoryShow extends React.Component {
     if (!story) {
       return <div>Loading...</div>;
     } else {
+      const storyPs = story.body.split('\n').map((p, i) => <p key={i}>{p}</p>);
       return (
         <article className='article'>
           <header className='article-header'>
@@ -40,7 +41,7 @@ class StoryShow extends React.Component {
             <section className='section'>
               <div className='section-content'>
                 <div className='section-inner'>
-                  <p>{ story.body }</p>
+                  { storyPs }
                 </div>
               </div>
             </section>
