@@ -8,7 +8,7 @@ import { clearErrors } from '../../actions/session_actions';
 const mapStateToProps = (state, ownProps) => {
   let story = { title: '', body: '' };
   let formType = 'new';
-  let errors = state.errors.session;
+  let errors = state.errors.story;
   if (ownProps.match.path == '/api/stories/:id/edit') {
     story = state.entities.stories[ownProps.match.params.id];
     formType = 'edit';

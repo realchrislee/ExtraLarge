@@ -14,4 +14,4 @@ const StoryErrorsReducer = (state = [], action) => {
   }
 };
 
-export default StoryErrorsReducer
+export default StoryErrorsReducer;
