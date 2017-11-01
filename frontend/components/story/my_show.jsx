@@ -27,7 +27,10 @@ class MyShow extends React.Component {
             <Link to='/new-story'>Write a story</Link>
           </div>
         </div>
-        <div>
+        <div className='public'>
+          <span>Public <span>{this.props.stories.length}</span></span>
+        </div>
+        <div className='p-titles'>
           <div>
             {stories}
           </div>

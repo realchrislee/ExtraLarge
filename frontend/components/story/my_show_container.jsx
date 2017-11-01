@@ -6,7 +6,7 @@ import { fetchStories, deleteStory, updateStory } from '../../actions/story_acti
 const mapStateToProps = (state, ownProps) => {
   let stories = [];
   if (state.session.currentUser) {
-    stories = state.entities.stories.filter(story => story.author_id === state.session.currentUser.id);
+    stories = Object.values(state.entities.stories).filter(story => story.author_id === state.session.currentUser.id);
   }
   return {
     stories,

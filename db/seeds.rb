@@ -17,7 +17,7 @@ end
 User.create!(name: 'guest', username: 'guest', password: 'guestpass')
 
 Story.destroy_all
-15.times do
+16.times do
   Story.create!(
       title: Faker::RickAndMorty.quote,
       body: Faker::Lorem.paragraphs(7),
