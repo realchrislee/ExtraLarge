@@ -10,7 +10,7 @@ const StoryIndexItem = ({ story, router, deleteStory, history }) => {
         </Link>
       </div>
       <div className='story-right-div'>
-          <Link className='link' to={`/api/stories/${story.id}`}>
+          <Link to={`/api/stories/${story.id}`}>
             {story.title}
           </Link>
       </div>
