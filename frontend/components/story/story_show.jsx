@@ -27,13 +27,13 @@ class StoryShow extends React.Component {
           <div className='story-user'>
             <div className='story-avatar'>
               <img
-                src={this.props.currentUser.avatar_url}
+                src={story.avatar_url}
                 className='story-avatar-img'
                 ></img>
             </div>
             <div className='author-info'>
               <div className='author-name'>
-                <h5>{this.props.currentUser.name}</h5>
+                <h5>{story.author_name}</h5>
               </div>
             </div>
           </div>

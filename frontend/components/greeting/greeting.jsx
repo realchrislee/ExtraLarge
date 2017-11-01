@@ -7,6 +7,7 @@ class Greeting extends Component {
     this.handleGuestLogin = this.handleGuestLogin.bind(this);
     this.handleDropdown = this.handleDropdown.bind(this);
     this.hideDropdown = this.hideDropdown.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
   }
 
   handleGuestLogin(e) {
@@ -25,6 +26,14 @@ class Greeting extends Component {
     $('#user-dropdown').addClass('hidden');
     $('#user-dropdown-button').on('click', this.handleDropdown);
     $(document).off('click', this.hideDropdown);
+  }
+
+  handleLogout(e) {
+    e.preventDefault();
+    if(this.props.currentUser) {
+      this.props.history.push('/');
+      this.props.logout();
+    }
   }
 
   render() {
@@ -53,7 +62,7 @@ class Greeting extends Component {
                   <Link to='/me/stories' className='dd-link'>Stories</Link>
                 </li>
                 <li>
-                  <button className='dd-link' onClick={ () => this.props.logout() }>Sign out</button>
+                  <button className='dd-link' onClick={this.handleLogout}>Sign out</button>
                 </li>
               </ul>
             </div>

@@ -20,8 +20,13 @@ class MyShow extends React.Component {
       );
     });
     return (
-      <div>
-        <h3>Your stories</h3>
+      <div className='p-container'>
+        <div className='p-header'>
+          <h4>Your stories</h4>
+          <div className='n-s-button'>
+            <Link to='/new-story'>Write a story</Link>
+          </div>
+        </div>
         <div>
           <div>
             {stories}

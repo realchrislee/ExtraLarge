@@ -1,0 +1,27 @@
+.p-container {
+  width: 1040px;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin: 0 auto;
+}
+
+.p-header {
+  padding-top: 100px;
+  padding-bottom: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h4 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 43px;
+    line-height: 52px;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: -1px;
+  }
+}
+
+.n-s-button {
+
+}
