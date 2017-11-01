@@ -5,7 +5,7 @@ const StoriesReducer = (state = [], action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_STORIES:
-      return Object.values(action.stories);
+      return action.stories;
     case RECEIVE_STORY:
       return Object.assign({}, state, { [action.story.id]: action.story });
     case REMOVE_STORY:
