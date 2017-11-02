@@ -16,6 +16,8 @@ Duis dictum velit sed justo consequat, et ultrices eros rhoncus. Aliquam erat vo
 
 Maecenas imperdiet felis at aliquam sollicitudin. Sed sem dolor, rutrum gravida justo a, pulvinar cursus velit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut accumsan massa ante, eu volutpat justo vulputate in. Nunc dictum aliquam scelerisque. Nam sit amet arcu elementum, sodales orci at, rutrum risus. Etiam dui nulla, vestibulum tincidunt feugiat sit amet, feugiat at libero. Curabitur auctor arcu at ipsum molestie iaculis.'
 
+# File.open(app/assets/images)
+
 User.destroy_all
 5.times do
   User.create!(
