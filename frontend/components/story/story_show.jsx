@@ -24,8 +24,8 @@ class StoryShow extends React.Component {
       return <div>Loading...</div>;
     } else {
       let edit;
-      if (this.props.currentUser) {
-        const edit = this.props.currentUser.id == story.author_id ? <Link className='edit' to={`/api/stories/${story.id}/edit`}>Edit</Link> : null;
+      if (!!this.props.currentUser) {
+        edit = this.props.currentUser.id == story.author_id ? <Link className='edit' to={`/api/stories/${story.id}/edit`}>Edit</Link> : null;
       }
       const storyPs = story.body.split('\n').map((p, i) => <p key={i}>{p}</p>);
       return (
