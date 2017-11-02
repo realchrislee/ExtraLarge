@@ -1,7 +1,7 @@
 export const fetchStories = () => {
   return $.ajax({
     method: 'get',
-    url: '/api/stories',
+    url: '/api/stories'
   });
 };
 
@@ -28,9 +28,9 @@ export const updateStory = story => {
   });
 };
 
-export const deleteStory = storyId => {
+export const deleteStory = id => {
   return $.ajax({
-    url: `api/stories/${storyId}`,
-    method: 'delete',
+    url: `api/stories/${id}`,
+    method: 'delete'
   });
 };

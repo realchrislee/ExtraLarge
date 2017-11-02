@@ -16,11 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.fetchStories = ApiUtil.fetchStories;
-  window.fetchStory = ApiUtil.fetchStory;
-  window.createStory = ApiUtil.createStory;
-  window.updateStory = ApiUtil.updateStory;
-  window.deleteStory = ApiUtil.deleteStory;
+
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store }/>, root);

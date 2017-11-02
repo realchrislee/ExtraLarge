@@ -1,4 +1,5 @@
 import React from 'react';
+import GreetingContainer from '../greeting/greeting_container';
 import { Link, withRouter } from 'react-router-dom';
 
 class SessionForm extends React.Component {
@@ -70,38 +71,49 @@ class SessionForm extends React.Component {
                   placeholder='Full Name'
                   />;
     return (
-      <div className={`session-form-container ${this.props.className}`}>
-        <form onSubmit={this.handleSubmit}>
-          <div className='session-greeting-container'>
-            {this.props.greeting}
-            <br/>
-            {this.props.greeting2}
+      <div>
+        <div className='main-header'>
+          <a className="about" href="#">About membership</a>
+          <div className='nav-div'>
+            <Link to='/'>ExtraLarge</Link>
           </div>
-          {this.renderErrors()}
-          <div className="session-form">
-            {nameInput}
-            <br/>
-            <input
-              className='session-input'
-              type='text'
-              value={this.state.username}
-              onChange={this.update('username')}
-              placeholder='Username'
-              />
-            <br/>
-            <input
-              className='session-input'
-              type='password'
-              value={this.state.password}
-              onChange={this.update('password')}
-              placeholder='Password'
-              />
-            <br/>
-            <input className='form-submit' type='submit' value={this.props.buttonText} />
-            <br/>
-            {this.props.navLink}
+          <div className='greeting-div'>
+            <GreetingContainer />
           </div>
-        </form>
+        </div>
+        <div className={`session-form-container ${this.props.className}`}>
+          <form onSubmit={this.handleSubmit}>
+            <div className='session-greeting-container'>
+              {this.props.greeting}
+              <br/>
+              {this.props.greeting2}
+            </div>
+            {this.renderErrors()}
+            <div className="session-form">
+              {nameInput}
+              <br/>
+              <input
+                className='session-input'
+                type='text'
+                value={this.state.username}
+                onChange={this.update('username')}
+                placeholder='Username'
+                />
+              <br/>
+              <input
+                className='session-input'
+                type='password'
+                value={this.state.password}
+                onChange={this.update('password')}
+                placeholder='Password'
+                />
+              <br/>
+              <input className='form-submit' type='submit' value={this.props.buttonText} />
+              <br/>
+              {this.props.navLink}
+            </div>
+          </form>
+        </div>
       </div>
     );
   }

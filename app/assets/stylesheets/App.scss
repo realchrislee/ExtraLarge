@@ -37,9 +37,7 @@
 
 .main-div {
   background: white;
-  // position: scroll;
-  top: 0;
-  left: 0;
+  position: relative;
   min-height: 100%;
   min-width: 100%;
   // display: flex;
@@ -73,14 +71,6 @@
 
 }
 
-.user-dropdown-button {
-  width: 32px;
-  height: 32px;
-  overflow: hidden;
-  border-radius: 50%;
-  position: relative;
-}
-
 .user-avatar-img {
   background-size: cover;
   background-repeat: no-repeat;
@@ -100,17 +90,23 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  min-width: 273px;
+}
+
+.user-dropdown-button {
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  border-radius: 50%;
+  position: absolute;
 }
 
 .user-dropdown {
-  position: absolute;
+  position: relative;
   align-items: flex-end;
-  top: 48.5px;
-  right: 6px;
+  top: 90px;
+  right: -16px;
   background: white;
   width: 230px;
-  height: 511px;
   padding: 8px 0;
   margin: 15px;
   border-radius: 3px;
@@ -119,7 +115,7 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  -webkit-tap-highlight-color: transparent;
+  z-index: 100;
   .dd-link {
     display: block;
     height: 22px;
@@ -135,9 +131,6 @@
     color: rgba(0,0,0,.68);
     transition: .1s background-color,.1s border-color,.1s color,.1s fill;
     font-family: 'Roboto', sans-serif;
-  }
-  button {
-    margin-top: 410px;
   }
   .dd-link:hover {
     color: black;

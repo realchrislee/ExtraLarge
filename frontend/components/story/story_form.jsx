@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
+import GreetingContainer from '../greeting/greeting_container';
 
 class StoryForm extends React.Component {
   constructor(props) {
@@ -10,12 +11,15 @@ class StoryForm extends React.Component {
 
   componentDidMount() {
     if (this.props.match.params.id) {
-      this.props.fetchPost(this.props.match.params.id);
+      this.props.fetchStory(this.props.match.params.id);
+    }
+    if (this.props.errors) {
+      this.props.clearErrors(this.props.errors);
     }
   }
 
   componentWillReceiveProps(newProps) {
-    this.setState(newProps.post);
+    this.setState(newProps.story);
   }
 
   componentWillUnmount() {
@@ -55,40 +59,53 @@ class StoryForm extends React.Component {
 
   render() {
     if(!this.props.currentUser) return <Redirect to='/' />;
-
+    if(!this.state) {
+      return <div>Loading...</div>;
+    }
     return (
-      <div className='story-div'>
-        {this.renderErrors()}
-        <div className='story-user'>
-          <div className='story-avatar'>
-            <img
-              src={this.props.currentUser.avatar_url}
-              className='story-avatar-img'
-              ></img>
+      <div>
+        <div className='main-header'>
+          <a className="about" href="#">About membership</a>
+          <div className='nav-div'>
+            <Link to='/'>ExtraLarge</Link>
           </div>
-          <div className='author-info'>
-            <div className='author-name'>
-              <h5>{this.props.currentUser.name}</h5>
-            </div>
+          <div className='greeting-div'>
+            <GreetingContainer />
           </div>
         </div>
-        <form className='story-form' onSubmit={this.handleSubmit}>
-          <br/>
-          <input
-            type='text'
-            value={this.state.title}
-            onChange={this.update('title')}
-            placeholder='Title' />
-          <br/>
-          <br/>
-          <textarea
-            value={this.state.body}
-            onChange={this.update('body')}
-            placeholder='Tell your story...'
-            />
-          <br/>
-          <input type='submit' value='Publish' />
-        </form>
+        <div className='story-div'>
+          {this.renderErrors()}
+          <div className='story-user'>
+            <div className='story-avatar'>
+              <img
+                src={this.props.currentUser.avatar_url}
+                className='story-avatar-img'
+                ></img>
+            </div>
+            <div className='author-info'>
+              <div className='author-name'>
+                <h5>{this.props.currentUser.name}</h5>
+              </div>
+            </div>
+          </div>
+          <form className='story-form' onSubmit={this.handleSubmit}>
+            <br/>
+            <input
+              type='text'
+              value={this.state.title}
+              onChange={this.update('title')}
+              placeholder='Title' />
+            <br/>
+            <br/>
+            <textarea
+              value={this.state.body}
+              onChange={this.update('body')}
+              placeholder='Tell your story...'
+              />
+            <br/>
+            <input className='publish' type='submit' value='Publish' />
+          </form>
+        </div>
       </div>
     );
   }

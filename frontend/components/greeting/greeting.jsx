@@ -4,10 +4,12 @@ import { Link } from 'react-router-dom';
 class Greeting extends Component {
   constructor(props) {
     super(props);
+    this.state = {isOpen: false};
     this.handleGuestLogin = this.handleGuestLogin.bind(this);
     this.handleDropdown = this.handleDropdown.bind(this);
-    this.hideDropdown = this.hideDropdown.bind(this);
+    this.handleOutsideClick = this.handleOutsideClick.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
+    this.toggleDropdown = this.toggleDropdown.bind(this);
   }
 
   handleGuestLogin(e) {
@@ -15,17 +17,28 @@ class Greeting extends Component {
     this.props.login({user: {username: 'guest', password: 'guestpass'}});
   }
 
-  handleDropdown(e) {
-    e.preventDefault();
-      $('#user-dropdown').removeClass('hidden');
-    $('#user-dropdown-button').off('click', this.handleDropdown);
-    $(document).on('click', this.hideDropdown);
+  toggleDropdown() {
+    this.setState({isOpen: !this.state.isOpen});
   }
 
-  hideDropdown() {
-    $('#user-dropdown').addClass('hidden');
-    $('#user-dropdown-button').on('click', this.handleDropdown);
-    $(document).off('click', this.hideDropdown);
+  handleDropdown() {
+    let root = document.getElementById('root');
+
+    if (!this.state.isOpen) {
+      root.addEventListener('click', this.handleOutsideClick, false);
+    } else {
+      root.removeEventListener('click', this.handleOutsideClick, false);
+    }
+
+    this.toggleDropdown();
+  }
+
+  handleOutsideClick(e) {
+    // if(this.node.contains(e.target)) {
+    //   return;
+    // }
+
+    this.handleDropdown();
   }
 
   handleLogout(e) {
@@ -53,20 +66,20 @@ class Greeting extends Component {
           <button id='user-dropdown-button' onClick={this.handleDropdown} className='user-dropdown-button'>
             <img src={this.props.currentUser.avatar_url} className='user-avatar-img'></img>
           </button>
-            <div id='user-dropdown' className='user-dropdown hidden'>
-              <ul>
-                <li>
-                  <Link to='/new-story' className='dd-link'>New story</Link>
-                </li>
-                <li>
-                  <Link to='/me/stories' className='dd-link'>Stories</Link>
-                </li>
-                <li>
-                  <button className='dd-link' onClick={this.handleLogout}>Sign out</button>
-                </li>
-              </ul>
-            </div>
-            <div className='arrow-up'></div>
+          <div id='user-dropdown' ref={node => { this.node = node; }} className={this.state.isOpen ? 'user-dropdown' : 'hidden'}>
+            <ul>
+              <li>
+                <Link to='/new-story' className='dd-link'>New story</Link>
+              </li>
+              <li>
+                <Link to='/me/stories' className='dd-link'>Stories</Link>
+              </li>
+              <li>
+                <button className='dd-link' onClick={this.handleLogout}>Sign out</button>
+              </li>
+            </ul>
+          </div>
+          <div className='arrow-up'></div>
         </div>
       );
     }

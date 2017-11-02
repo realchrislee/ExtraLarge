@@ -9,7 +9,7 @@ const StoriesReducer = (state = [], action) => {
     case RECEIVE_STORY:
       return Object.assign({}, state, { [action.story.id]: action.story });
     case REMOVE_STORY:
-      let newState = merge({}, state);
+      let newState = Object.assign({}, state);
       delete newState[action.storyId];
       return newState;
     default:

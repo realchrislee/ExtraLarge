@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
-const StoryIndexItem = ({ story, router, deleteStory, history }) => {
+const StoryIndexItem = ({ story, router, updateStory, deleteStory, history }) => {
   return (
     <div className='story-index-div'>
       <div className='story-left-div'>
@@ -10,9 +10,27 @@ const StoryIndexItem = ({ story, router, deleteStory, history }) => {
         </Link>
       </div>
       <div className='story-right-div'>
+        <div className='story-right-inner'>
           <Link to={`/api/stories/${story.id}`}>
             {story.title}
           </Link>
+          <Link to={`/api/stories/${story.id}`}>
+            {story.description} This is where the description would go.
+          </Link>
+        </div>
+        <div className='index-user'>
+          <div className='index-avatar'>
+            <img
+              src={story.avatar_url}
+              className='index-avatar-img'
+              ></img>
+          </div>
+          <div className='i-author-info'>
+            <div className='i-author-name'>
+              <h5>{story.author_name}</h5>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

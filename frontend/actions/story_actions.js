@@ -31,7 +31,7 @@ export const updateStory = story => dispatch => {
 
 export const deleteStory = storyId => dispatch => {
   return APIUtil.deleteStory(storyId)
-  .then(story => dispatch(removeStory(story.id)))
+  .then(story => dispatch(removeStory(storyId)))
   .fail(errors => dispatch(receiveErrors(errors)));
 };
 
