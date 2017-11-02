@@ -16,31 +16,30 @@ Duis dictum velit sed justo consequat, et ultrices eros rhoncus. Aliquam erat vo
 
 Maecenas imperdiet felis at aliquam sollicitudin. Sed sem dolor, rutrum gravida justo a, pulvinar cursus velit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut accumsan massa ante, eu volutpat justo vulputate in. Nunc dictum aliquam scelerisque. Nam sit amet arcu elementum, sodales orci at, rutrum risus. Etiam dui nulla, vestibulum tincidunt feugiat sit amet, feugiat at libero. Curabitur auctor arcu at ipsum molestie iaculis.'
 
-# File.open(app/assets/images)
 
 User.destroy_all
-5.times do
-  User.create!(
-      name: Faker::Cat.name,
-      username: Faker::Internet.unique.user_name,
-      password: 'password'
-      )
-end
-User.create!(name: 'guest', username: 'guest', password: 'guestpass')
+User.create!(name: Faker::Cat.name, username: Faker::Internet.unique.user_name, password: 'password', avatar: File.open('app/assets/images/eyes.jpg'))
+User.create!(name: Faker::Cat.name, username: Faker::Internet.unique.user_name, password: 'password', avatar: File.open('app/assets/images/girl.jpg'))
+User.create!(name: Faker::Cat.name, username: Faker::Internet.unique.user_name, password: 'password', avatar: File.open('app/assets/images/leo.jpg'))
+User.create!(name: Faker::Cat.name, username: Faker::Internet.unique.user_name, password: 'password', avatar: File.open('app/assets/images/man.jpg'))
+User.create!(name: Faker::Cat.name, username: Faker::Internet.unique.user_name, password: 'password', avatar: File.open('app/assets/images/maybelline.jpg'))
+User.create!(name: 'guest', username: 'guest', password: 'guestpass', avatar: File.open('app/assets/images/trump.png'))
 
 Story.destroy_all
-16.times do
-  Story.create!(
-      title: Faker::Company.unique.catch_phrase,
-      body: body,
-      author_id: User.all.sample.id
-      )
-end
-
-10.times do
-  Story.create!(
-      title: Faker::Company.unique.catch_phrase,
-      body: body,
-      author_id: User.find_by(name: 'guest').id
-      )
-end
+Story.create!(title: Faker::Company.unique.catch_phrase, body: body, author_id: User.all.sample.id, image: File.open('app/assets/images/story/a.jpg'))
+Story.create!(title: Faker::Company.unique.catch_phrase, body: body, author_id: User.all.sample.id, image: File.open('app/assets/images/story/andreas.jpg'))
+Story.create!(title: Faker::Company.unique.catch_phrase, body: body, author_id: User.all.sample.id, image: File.open('app/assets/images/story/anton.jpg'))
+Story.create!(title: Faker::Company.unique.catch_phrase, body: body, author_id: User.all.sample.id, image: File.open('app/assets/images/story/beach.jpg'))
+Story.create!(title: Faker::Company.unique.catch_phrase, body: body, author_id: User.all.sample.id, image: File.open('app/assets/images/story/christian.jpg'))
+Story.create!(title: Faker::Company.unique.catch_phrase, body: body, author_id: User.all.sample.id, image: File.open('app/assets/images/story/joey.jpg'))
+Story.create!(title: Faker::Company.unique.catch_phrase, body: body, author_id: User.all.sample.id, image: File.open('app/assets/images/story/jonatan.jpg'))
+Story.create!(title: Faker::Company.unique.catch_phrase, body: body, author_id: User.all.sample.id, image: File.open('app/assets/images/story/landspace.jpg'))
+Story.create!(title: Faker::Company.unique.catch_phrase, body: body, author_id: User.all.sample.id, image: File.open('app/assets/images/story/photo.jpg'))
+Story.create!(title: Faker::Company.unique.catch_phrase, body: body, author_id: User.all.sample.id, image: File.open('app/assets/images/story/ryan.jpg'))
+Story.create!(title: Faker::Company.unique.catch_phrase, body: body, author_id: User.all.sample.id, image: File.open('app/assets/images/story/samuele.jpg'))
+Story.create!(title: Faker::Company.unique.catch_phrase, body: body, author_id: User.all.sample.id, image: File.open('app/assets/images/story/shoes.jpg'))
+Story.create!(title: Faker::Company.unique.catch_phrase, body: body, author_id: User.all.sample.id, image: File.open('app/assets/images/story/spencer.jpg'))
+Story.create!(title: Faker::Company.unique.catch_phrase, body: body, author_id: User.find_by(name: 'guest').id, image: File.open('app/assets/images/story/stefan.jpg'))
+Story.create!(title: Faker::Company.unique.catch_phrase, body: body, author_id: User.find_by(name: 'guest').id, image: File.open('app/assets/images/story/sweet.jpg'))
+Story.create!(title: Faker::Company.unique.catch_phrase, body: body, author_id: User.find_by(name: 'guest').id, image: File.open('app/assets/images/story/tom.jpg'))
+Story.create!(title: Faker::Company.unique.catch_phrase, body: body, author_id: User.find_by(name: 'guest').id, image: File.open('app/assets/images/story/william.jpg'))
