@@ -12,19 +12,23 @@ export const fetchStory = id => {
   });
 };
 
-export const createStory = story => {
+export const createStory = formData => {
   return $.ajax({
     url: `api/stories`,
     method: 'post',
-    data: { story }
+    contentType: false,
+    processData: false,
+    data: formData
   });
 };
 
-export const updateStory = story => {
+export const updateStory = (formData, id) => {
   return $.ajax({
-    url: `api/stories/${story.id}`,
+    url: `api/stories/${id}`,
     method: 'patch',
-    data: { story }
+    contentType: false,
+    processData: false,
+    data: formData
   });
 };
 

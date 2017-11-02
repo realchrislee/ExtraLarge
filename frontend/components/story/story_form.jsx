@@ -6,16 +6,22 @@ class StoryForm extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.state = this.props.story;
+    this.updateFile = this.updateFile.bind(this);
+    if (this.props.story) {
+      this.state = this.props.story;
+      this.state.imageUrl = this.props.story.image_url;
+    } else {
+      this.state = { title: '', body: '', imageFile: null, imageUrl: null };
+    }
   }
 
   componentDidMount() {
-    if (this.props.match.params.id) {
+    if (this.props.formType === 'edit') {
       this.props.fetchStory(this.props.match.params.id);
     }
-    if (this.props.errors) {
-      this.props.clearErrors(this.props.errors);
-    }
+    // if (this.props.errors) {
+    //   this.props.clearErrors(this.props.errors);
+    // }
   }
 
   componentWillReceiveProps(newProps) {
@@ -38,7 +44,17 @@ class StoryForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.action(this.state).then((story) => {
+    // $('#publish').css({ cursor: 'wait' });
+    // document.getElementById('publish').disabled = 'disabled';
+    // document.getElementById('publish').value = 'Publishing';
+    // document.getElementById('root').addEventListener('onStateChange', () => (document.getElementById('publish').disabled = ''));
+    const file = this.state.imageFile;
+    let formData = new FormData();
+    formData.append("story[title]", this.state.title);
+    formData.append("story[body]", this.state.body);
+    if (file) formData.append("story[image]", file);
+    const id = this.props.match.params.id ? this.props.match.params.id : null;
+    this.props.action(formData, id).then((story) => {
       return this.props.history.push(`/api/stories/${story.story.id}`);
     });
   }
@@ -57,6 +73,19 @@ class StoryForm extends React.Component {
     );
   }
 
+  updateFile(e) {
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = function () {
+      this.setState({ imageFile: file, imageUrl: fileReader.result });
+    }.bind(this);
+    if (file) {
+      fileReader.readAsDataURL(file);
+    } else {
+      this.setState({ imageUrl: "", imageFile: null });
+    }
+  }
+
   render() {
     if(!this.props.currentUser) return <Redirect to='/' />;
     if(!this.state) {
@@ -71,6 +100,7 @@ class StoryForm extends React.Component {
           </div>
           <div className='greeting-div'>
             <GreetingContainer />
+            <input id='publish' form='story-form' className='publish' type='submit' value='Publish' />
           </div>
         </div>
         <div className='story-div'>
@@ -88,22 +118,31 @@ class StoryForm extends React.Component {
               </div>
             </div>
           </div>
-          <form className='story-form' onSubmit={this.handleSubmit}>
+          <form id='story-form' className='story-form' onSubmit={this.handleSubmit}>
+            <br/>
+            <img src={this.state.imageUrl} />
+            <br/>
+            <label className='s-upload'>
+              Upload image
+              <input
+                type='file'
+                onChange={this.updateFile}
+                />
+            </label>
+            <br/>
             <br/>
             <input
               type='text'
+              className='s-title'
               value={this.state.title}
               onChange={this.update('title')}
               placeholder='Title' />
-            <br/>
             <br/>
             <textarea
               value={this.state.body}
               onChange={this.update('body')}
               placeholder='Tell your story...'
               />
-            <br/>
-            <input className='publish' type='submit' value='Publish' />
           </form>
         </div>
       </div>

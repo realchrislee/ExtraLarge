@@ -24,7 +24,7 @@ class Api::StoriesController < ApplicationController
 
   def update
     @story = Story.find(params[:id])
-    if @story.update(story_params)
+    if @story.update_attributes(story_params)
       render 'api/stories/show'
     else
       render @story.errors.full_meassages, status: 422
@@ -40,6 +40,6 @@ class Api::StoriesController < ApplicationController
 
   private
   def story_params
-    params.require(:story).permit(:title, :body)
+    params.require(:story).permit(:title, :body, :image)
   end
 end

@@ -25,6 +25,8 @@
   align-self: center;
   position: absolute;
   right: 10px;
+  max-width: 72.09px;
+  max-height: 63px;
   // left: calc(100vw - 310px);
   // background: #f0f0f0;
   // position: fixed;
@@ -46,12 +48,15 @@
 
 .greeting-buttons {
   display: flex;
-  color: #03a87c;
   align-items: center;
   justify-content: center;
+  color: #03a87c;
   font-size: 16px;
   min-width: 273px;
   line-height: 1.4;
+  position: absolute;
+  right: -18px;
+  top: -21px;
 }
 
 .signin-button {
@@ -90,6 +95,8 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  max-width: 72.08px;
+  max-height: 63px;
 }
 
 .user-dropdown-button {

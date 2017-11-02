@@ -17,14 +17,14 @@ export const fetchStory = id => dispatch => {
   .fail(errors => dispatch(receiveErrors(errors)));
 };
 
-export const createStory = story => dispatch => {
-  return APIUtil.createStory(story)
+export const createStory = formData => dispatch => {
+  return APIUtil.createStory(formData)
   .then(story => dispatch(receiveStory(story)))
   .fail(errors => dispatch(receiveErrors(errors)));
 };
 
-export const updateStory = story => dispatch => {
-  return APIUtil.updateStory(story)
+export const updateStory = (story, id) => dispatch => {
+  return APIUtil.updateStory(story, id)
   .then(story => dispatch(receiveStory(story)))
   .fail(errors => dispatch(receiveErrors(errors)));
 };

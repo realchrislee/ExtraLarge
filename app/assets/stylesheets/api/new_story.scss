@@ -1,4 +1,5 @@
 .story-div {
+  position: relative;
   min-height: calc(100vh - 65px);
   border-top: 1px solid rgba(0,0,0,.05);
   display: flex;
@@ -12,7 +13,7 @@
 .story-form {
   width: 740px;
   margin: 0 auto;
-  input:first-of-type {
+  .s-title {
     font-weight: 600;
     font-size: 37px;
     line-height: 1.04;
@@ -21,6 +22,18 @@
   textarea {
     width: 100%;
     height: 500px;
+  }
+}
+
+.s-upload {
+  cursor: pointer;
+  border: 1px solid #03a87c;
+  color: #03a87c;
+  padding: 8px 15px;
+  border-radius: 3px;
+  font-family: 'Roboto', sans-serif;
+  input {
+    display: none;
   }
 }
 
@@ -61,4 +74,21 @@
     margin-top: auto;
     font-family: 'Roboto', sans-serif;
   }
+}
+
+.publish {
+  position: absolute;
+  bottom: 32%;
+  left: -49%;
+  font-size: 15px;
+  color: #03a87c;
+}
+
+.wait {
+  cursor: wait;
+  color: gray;
+}
+
+.s-upload {
+
 }
