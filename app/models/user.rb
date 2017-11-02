@@ -3,7 +3,7 @@ class User < ApplicationRecord
   validates :username, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
-  has_attached_file :avatar, default_url: "default-avatar-img.png"
+  has_attached_file :avatar, default_url: "default-avatar-img.png", s3_protocol: :https
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
   attr_reader :password
