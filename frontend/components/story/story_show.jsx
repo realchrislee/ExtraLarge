@@ -23,7 +23,7 @@ class StoryShow extends React.Component {
     if (!story) {
       return <div>Loading...</div>;
     } else {
-      const edit = this.props.currentUser.id == story.author_id ? <Link to={`/api/stories/${story.id}/edit`}>Edit</Link> : null;
+      const edit = this.props.currentUser.id == story.author_id ? <Link className='edit' to={`/api/stories/${story.id}/edit`}>Edit</Link> : null;
       const storyPs = story.body.split('\n').map((p, i) => <p key={i}>{p}</p>);
       return (
         <div>
@@ -34,10 +34,10 @@ class StoryShow extends React.Component {
             </div>
             <div className='greeting-div'>
               <GreetingContainer />
+              {edit}
             </div>
           </div>
           <article className='article'>
-            {edit}
             <div className='story-user'>
               <div className='story-avatar'>
                 <img

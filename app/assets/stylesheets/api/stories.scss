@@ -162,17 +162,6 @@
 //   margin-top: 20px;
 // }
 
-.article {
-  position: relative;
-  a:first-child {
-    position: absolute;
-    right: 102px;
-    top: -40px;
-    color: rgba(0,0,0,.54);
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-  }
-}
 
 .article-div {
   max-width: 740px;
@@ -244,5 +233,12 @@
   }
 }
 
-
+.edit {
+  position: absolute;
+  bottom: 35%;
+  left: 1%;
+  color: rgba(0,0,0,.54);
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
 // background-image:url(https://cdn-images-1.medium.com/max/1000/1*NV54YLXyvmeUtCXSPHJq5g.png); background-position: bottom center;
