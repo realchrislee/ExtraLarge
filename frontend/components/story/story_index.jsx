@@ -46,11 +46,11 @@ class StoryIndex extends React.Component {
                   </div>
                   <div className='landing-buttons-div'>
                     <Link className='landing-signup-button' to='/signup'>Get started</Link>
-                    <Link className='landing-learn-more' to='/about'>Learn more</Link>
+                    <Link className='landing-learn-more hidden' to='/about'>Learn more</Link>
                   </div>
                 </div>
                 <div className='landing-right-div'>
-
+                  
                 </div>
               </div>
               <div>
