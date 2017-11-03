@@ -1,4 +1,4 @@
-![ExtraLarge] (https://github.com/realchrislee/extralarge/blob/master/docs/demo.png)
+![ExtraLarge](https://github.com/realchrislee/extralarge/blob/master/docs/demo.png)
 
 # ExtraLarge
 
