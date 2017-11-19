@@ -4,6 +4,10 @@
 .c-f-div {
   max-width: 640px;
   margin: 0 auto;
+  padding-top: 20px;
+  label {
+    margin-top: 10px;
+  }
 }
 
 .c-form-div {
@@ -11,9 +15,11 @@
   position: relative;
   border: 1px solid rgba(0,0,0,.09);
   box-shadow: 0 1px 4px rgba(0,0,0,.03);
+  border-radius: 3px;
   padding-left: 20px;
   padding-right: 20px;
   margin-top: 20px;
+  background: white;
   div {
     height: 100%;
     width: 100%;
@@ -40,14 +46,15 @@
   }
 }
 
-.c-body {
-  max-height: 315px;
-  overflow: hidden;
+footer {
+  background: #fafafa!important;
 }
 
 .c-index-div {
   display: block;
-  border: 1px solid black;
+  border: 1px solid rgba(0,0,0,.09);
+  box-shadow: 0 1px 4px rgba(0,0,0,.04);
+  border-radius: 3px;
   min-width: 598px;
   min-height: 141px;
   margin-top: 20px;
@@ -55,4 +62,39 @@
   margin-left: auto;
   max-height: 315px;
   padding: 10px 20px 15px 20px;
+  background: white;
+}
+
+.c-body {
+  max-height: 168px;
+  overflow: hidden;
+}
+
+.c-author {
+  display: flex;
+  margin-bottom: 17px;
+  span {
+    align-self: flex-start;
+    margin-top: auto;
+    font-family: 'Roboto', sans-serif;
+  }
+}
+
+.c-avatar {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 50%;
+  position: relative;
+  align-self: flex-start;
+  img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }

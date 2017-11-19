@@ -7,7 +7,7 @@ const MyShowItem = ({ story, router, history }) => {
       <Link to={`/api/stories/${story.id}`}>
         <h3>{story.title}</h3>
       </Link>
-      <Link className='p-desc' to={`/api/stories/${story.id}`}>{story.body.slice(1, 140)}...</Link>
+      <Link className='p-desc' to={`/api/stories/${story.id}`}>{story.body.slice(0, 140)}...</Link>
       <div className='p-date'>
         Published on {story.month} - {story.day}
       </div>

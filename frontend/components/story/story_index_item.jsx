@@ -15,7 +15,7 @@ const StoryIndexItem = ({ story, router, updateStory, deleteStory, history }) =>
             {story.title}
           </Link>
           <Link to={`/api/stories/${story.id}`}>
-            {story.description} This is where the description would go.
+            {story.body.slice(0, 140)}...
           </Link>
         </div>
         <div className='index-user'>

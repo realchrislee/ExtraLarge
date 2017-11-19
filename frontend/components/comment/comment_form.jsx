@@ -31,6 +31,7 @@ class CommentForm extends React.Component {
     }
     const comment = this.state;
     this.props.createComment(comment);
+    this.setState({body: ''});
   }
 
   renderErrors() {

@@ -11,7 +11,7 @@ class CommentIndex extends React.Component {
   }
 
   render() {
-    const comments = this.props.comments.map((comment, i) => {
+    const comments = this.props.comments.reverse().map((comment, i) => {
       return (
         <CommentIndexItem
           key={comment.id}

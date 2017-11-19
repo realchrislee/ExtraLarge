@@ -33,7 +33,7 @@ class MyShow extends React.Component {
 
   render() {
     if(!this.props.currentUser) return <Redirect to='/' />;
-    const stories = this.props.stories.map((story, i) => {
+    const stories = this.props.stories.reverse().map((story, i) => {
       return (
         <div className='show-item' key={i}>
           <MyShowItem
