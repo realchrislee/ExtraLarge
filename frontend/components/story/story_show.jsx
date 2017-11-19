@@ -2,6 +2,8 @@ import React from 'react';
 import { withrouter } from 'react-router';
 import { Link } from 'react-router-dom';
 import GreetingContainer from '../greeting/greeting_container';
+import CommentFormContainer from '../comment/comment_form_container';
+import CommentIndexContainer from '../comment/comment_index_container';
 
 class StoryShow extends React.Component {
   constructor(props) {
@@ -74,6 +76,12 @@ class StoryShow extends React.Component {
               </section>
             </div>
           </article>
+          <footer>
+            <div className='c-f-div'>
+              <CommentFormContainer match={this.props.match}/>
+              <CommentIndexContainer match={this.props.match}/>
+            </div>
+          </footer>
         </div>
       );
     }

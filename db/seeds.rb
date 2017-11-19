@@ -18,11 +18,11 @@ Maecenas imperdiet felis at aliquam sollicitudin. Sed sem dolor, rutrum gravida 
 
 
 User.destroy_all
-User.create!(name: Faker::Cat.name, username: Faker::Internet.unique.user_name, password: 'password', avatar: File.open('app/assets/images/eyes.jpg'))
-User.create!(name: Faker::Cat.name, username: Faker::Internet.unique.user_name, password: 'password', avatar: File.open('app/assets/images/girl.jpg'))
-User.create!(name: Faker::Cat.name, username: Faker::Internet.unique.user_name, password: 'password', avatar: File.open('app/assets/images/leo.jpg'))
-User.create!(name: Faker::Cat.name, username: Faker::Internet.unique.user_name, password: 'password', avatar: File.open('app/assets/images/man.jpg'))
-User.create!(name: Faker::Cat.name, username: Faker::Internet.unique.user_name, password: 'password', avatar: File.open('app/assets/images/maybelline.jpg'))
+User.create!(name: 'Sarah', username: Faker::Internet.unique.user_name, password: 'password', avatar: File.open('app/assets/images/eyes.jpg'))
+User.create!(name: 'Britney', username: Faker::Internet.unique.user_name, password: 'password', avatar: File.open('app/assets/images/girl.jpg'))
+User.create!(name: 'Leo', username: Faker::Internet.unique.user_name, password: 'password', avatar: File.open('app/assets/images/leo.jpg'))
+User.create!(name: 'Sam', username: Faker::Internet.unique.user_name, password: 'password', avatar: File.open('app/assets/images/man.jpg'))
+User.create!(name: 'Maybel', username: Faker::Internet.unique.user_name, password: 'password', avatar: File.open('app/assets/images/maybelline.jpg'))
 User.create!(name: 'guest', username: 'guest', password: 'guestpass', avatar: File.open('app/assets/images/trump.png'))
 
 Story.destroy_all
