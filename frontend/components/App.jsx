@@ -2,7 +2,6 @@ import React from 'react';
 import SignupContainer from './session/signup_container';
 import LoginContainer from './session/login_container';
 import MainContainer from './main/main_container';
-import PersonalContainer from './main/personal_container';
 import StoryIndexContainer from './story/story_index_container';
 import StoryShowContainer from './story/story_show_container';
 import StoryFormContainer from './story/story_form_container';

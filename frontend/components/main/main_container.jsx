@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import MainIndex from './main_index';
 import StoryIndex from '../story/story_index';
 import { fetchStories } from '../../actions/story_actions';
 
