@@ -246,3 +246,14 @@
   font-size: 14px;
 }
 // background-image:url(https://cdn-images-1.medium.com/max/1000/1*NV54YLXyvmeUtCXSPHJq5g.png); background-position: bottom center;
+
+footer {
+  height: 80px;
+  width: 100%;
+  background: black!important;
+  display: flex;
+  justify-content: space-around;
+  div {
+    color: white;
+  }
+}
