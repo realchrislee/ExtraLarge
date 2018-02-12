@@ -2,7 +2,6 @@ import React from 'react';
 import StoryIndexItem from './story_index_item';
 import GreetingContainer from '../greeting/greeting_container';
 import { Link } from 'react-router-dom';
-import Footer from '../main/footer';
 
 
 class StoryIndex extends React.Component {
@@ -60,7 +59,6 @@ class StoryIndex extends React.Component {
                 </ul>
               </div>
             </div>
-            <Footer />
           </div>
         );
       } else {
@@ -78,7 +76,6 @@ class StoryIndex extends React.Component {
             <div className='story-index-list'>
               {stories}
             </div>
-          <Footer />
           </div>
         );
       }

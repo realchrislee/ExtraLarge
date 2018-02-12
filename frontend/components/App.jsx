@@ -8,6 +8,7 @@ import StoryFormContainer from './story/story_form_container';
 import MyShowContainer from './story/my_show_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Route, Link } from 'react-router-dom';
+import Footer from './main/footer';
 
 // <div className='main-header'>
 //   <a className="about" href="#">About membership</a>
@@ -30,7 +31,7 @@ const App = (props) => (
     <ProtectedRoute exact path='/new-story' component={ StoryFormContainer } />
     <ProtectedRoute path='/me/stories' component={ MyShowContainer } />
     <ProtectedRoute exact path='/api/stories/:id/edit' component={ StoryFormContainer } />
-
+    <Footer />
   </div>
 );
 
