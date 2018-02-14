@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import GreetingContainer from '../greeting/greeting_container';
+import ReactQuill from 'react-quill';
 
 class StoryForm extends React.Component {
   constructor(props) {
@@ -137,7 +138,7 @@ class StoryForm extends React.Component {
               onChange={this.update('title')}
               placeholder='Title' />
             <br/>
-            <textarea
+            <ReactQuill
               value={this.state.body}
               onChange={this.update('body')}
               placeholder='Tell your story...'
