@@ -30,6 +30,7 @@ class StoryShow extends React.Component {
         edit = this.props.currentUser.id == story.author_id ? <Link className='edit' to={`/api/stories/${story.id}/edit`}>Edit</Link> : null;
       }
       const storyPs = story.body.split('\n').map((p, i) => <p key={i}>{p}</p>);
+      const body = () => ({__html: story.body});
       return (
         <div>
           <div className='main-header'>
@@ -70,7 +71,8 @@ class StoryShow extends React.Component {
               <section className='section'>
                 <div className='section-content'>
                   <div className='section-inner'>
-                    { storyPs }
+                    <div dangerouslySetInnerHTML={body()}>
+                    </div>
                   </div>
                 </div>
               </section>

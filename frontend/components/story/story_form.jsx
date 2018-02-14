@@ -8,6 +8,7 @@ class StoryForm extends React.Component {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateFile = this.updateFile.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     if (this.props.story) {
       this.state = this.props.story;
       this.state.imageUrl = this.props.story.image_url;
@@ -41,6 +42,12 @@ class StoryForm extends React.Component {
         [field]: e.target.value
       });
     };
+  }
+
+  handleChange(value) {
+    this.setState({
+      body: value
+    });
   }
 
   handleSubmit(e) {
@@ -140,7 +147,7 @@ class StoryForm extends React.Component {
             <br/>
             <ReactQuill
               value={this.state.body}
-              onChange={this.update('body')}
+              onChange={this.handleChange}
               placeholder='Tell your story...'
               />
           </form>
