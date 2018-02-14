@@ -79,7 +79,8 @@
   min-height: 800px;
   display: flex;
   flex-flow: wrap;
-  min-width: 890px;
+  // min-width: 890px;
+  justify-content: center;
 
 // This column solution is thanks to  Roko C. Buljan at Stack Overflow
 // @ this article https://stackoverflow.com/questions/12332528/how-to-display-list-items-as-columns
@@ -107,6 +108,7 @@
   border: 1px solid rgba(0,0,0,.1)!important;
   border-radius: 2px;
   margin-right: 20px;
+  min-width: 470px;
 }
 
 .story-left-div {
