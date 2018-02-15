@@ -5,19 +5,19 @@ class Footer extends React.Component {
     return (
       <footer>
         <div>
-          Chris Lee
+          Created By: Chris Lee
         </div>
         <div>
-          Github
+          <a href='https://github.com/realchrislee' target='_blank'>Github</a>
         </div>
         <div>
-          Portfolio
+          <a href='http://www.chrislee.biz/' target='_blank'>Portfolio</a>
         </div>
         <div>
-          LinkedIn
+          <a href='https://www.linkedin.com/in/clee92/' target='_blank'>LinkedIn</a>
         </div>
         <div>
-          Email
+          chrislee92@gmail.com
         </div>
       </footer>
     );
