@@ -2,7 +2,6 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
 const MyShowItem = ({ story, router, history }) => {
-  console.log(story.body);
   return (
     <div className='p-title'>
       <Link to={`/api/stories/${story.id}`}>

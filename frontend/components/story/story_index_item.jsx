@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
 const StoryIndexItem = ({ story, router, updateStory, deleteStory, history }) => {
+  const body = () => ({__html: story.body});
   return (
     <div className='story-index-div'>
       <div className='story-left-div'>
@@ -15,7 +16,7 @@ const StoryIndexItem = ({ story, router, updateStory, deleteStory, history }) =>
             {story.title}
           </Link>
           <Link to={`/api/stories/${story.id}`}>
-            {story.body.slice(0, 140)}...
+            {story.body.replace(/<[^>]+>/g, ' ').slice(0, 140)}...
           </Link>
         </div>
         <div className='index-user'>
