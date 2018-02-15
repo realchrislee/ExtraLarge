@@ -6,7 +6,7 @@ ExtraLarge is a community of individuals interested in sharing original ideas th
 
 * We share stories that concern the most important aspects of life
 
-* Join us and share your thoughts at [ExtraLarge](https://extralarge.herokuapp.com/#/)
+* Join us and share your thoughts at [ExtraLarge](https://extralarge.space)
 
 ## Stories
 
