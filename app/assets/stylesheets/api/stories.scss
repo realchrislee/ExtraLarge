@@ -255,7 +255,13 @@ footer {
   background: rgba(0,0,0,.54)!important;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   div {
     color: white;
   }
+}
+
+.ql-container {
+  min-height: 300px;
+  margin-bottom: 70px!important;
 }
