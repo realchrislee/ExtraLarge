@@ -11,6 +11,7 @@ class StoryShow extends React.Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     this.props.fetchStory(this.props.match.params.id);
   }
 
