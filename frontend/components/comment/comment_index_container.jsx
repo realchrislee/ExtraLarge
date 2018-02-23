@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import CommentIndex from './comment_index';
 import { fetchComments, deleteComment, updateComment } from '../../actions/comment_actions';
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, props) => {
   return {
@@ -16,7 +17,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   };
 };
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(CommentIndex);
+)(CommentIndex));

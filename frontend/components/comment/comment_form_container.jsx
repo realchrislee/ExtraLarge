@@ -10,7 +10,6 @@ const mapStateToProps = (state, props) => {
     comment: null,
     currentUser: state.session.currentUser,
     errors: state.errors.comment,
-    match: props.match
   };
 };
 

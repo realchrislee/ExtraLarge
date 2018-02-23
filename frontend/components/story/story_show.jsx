@@ -81,8 +81,8 @@ class StoryShow extends React.Component {
           </article>
           <div className='comment'>
             <div className='c-f-div'>
-              <CommentFormContainer match={this.props.match}/>
-              <CommentIndexContainer match={this.props.match}/>
+              <CommentFormContainer />
+              <CommentIndexContainer />
             </div>
           </div>
         </div>
