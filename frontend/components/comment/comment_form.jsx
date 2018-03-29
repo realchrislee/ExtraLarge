@@ -49,16 +49,23 @@ class CommentForm extends React.Component {
   }
 
   render() {
-    console.log(this.props.currentUser);
+    let image, name;
+    if (!this.props.currentUser) {
+      image = '';
+      name = 'Write your response...';
+    } else {
+      image = this.props.currentUser.avatar_url;
+      name = this.props.currentUser.name;
+    }
     return (
       <label>Responses
         <div className='c-form-div'>
           <div className='c-author'>
             <div className='c-avatar'>
-              <img src={this.props.currentUser.avatar_url} className='user-avatar-img'></img>
+              <img src={image} className='user-avatar-img'></img>
             </div>
             <div className='c-author-name'>
-              <span>{this.props.currentUser.name}</span>
+              <span>{name}</span>
             </div>
           </div>
           {this.renderErrors()}
