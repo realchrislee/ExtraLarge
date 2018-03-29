@@ -8,9 +8,8 @@ const CommentIndexItem = ({ comment, router, history }) => {
         <div className='c-avatar'>
           <img src={comment.comment_url}></img>
         </div>
-        <div className='c-author-info'>
+        <div className='c-author-name'>
           <span>{comment.author}</span>
-
         </div>
       </div>
       <div className='c-body'>

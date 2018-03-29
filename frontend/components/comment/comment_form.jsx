@@ -49,23 +49,30 @@ class CommentForm extends React.Component {
   }
 
   render() {
+    console.log(this.props.currentUser);
     return (
       <label>Responses
         <div className='c-form-div'>
-          <div>
-            {this.renderErrors()}
-            <form onSubmit={this.handleSubmit}>
-              <textarea
-                value={this.state.body}
-                onChange={this.update('body')}
-                />
-              <br/>
-              <input
-                type='submit'
-                value='Publish'
-                />
-            </form>
+          <div className='c-author'>
+            <div className='c-avatar'>
+              <img src={this.props.currentUser.avatar_url} className='user-avatar-img'></img>
+            </div>
+            <div className='c-author-name'>
+              <span>{this.props.currentUser.name}</span>
+            </div>
           </div>
+          {this.renderErrors()}
+          <form onSubmit={this.handleSubmit}>
+            <textarea
+              value={this.state.body}
+              onChange={this.update('body')}
+            />
+            <br/>
+            <input
+              type='submit'
+              value='Publish'
+            />
+          </form>
         </div>
       </label>
     );
