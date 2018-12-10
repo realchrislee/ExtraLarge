@@ -22,16 +22,15 @@ ExtraLarge is a community of individuals interested in sharing original ideas th
 
   * On this page, users have the ability to edit or delete stories through a dropdown menu attached to each story item  
   * Getting the dropdown menus to open individually took me quite some time to implement and I eventually decided to use the event to find the current target and siblings to access the individual dropdown menus instead of using the class name
-
-## Upcoming Features
+  
 
 ### Comments
 
-  * Each story will have comments at the bottom
+  * Users are able to comment on posts as long as they are logged in.
+  
 
-  * Users will be able to create, edit, and delete comments
+## Upcoming Features
 
-  * Users will be able to view all their comments on the on their Stories page
 
 ### Follows and Feed
 
