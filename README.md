@@ -15,9 +15,11 @@ ExtraLarge is a community of individuals interested in sharing original ideas th
 * Users have the option to submit a photo for stories
 
 * Users can edit the stories which they have published
+
   * It took me quite some time to be able to display the original image that was on the article and I eventually succeeded in using the image_url attached to each story to display the image
 
 * Users can see a list of all the stories that they have published so far
+
   * On this page, users have the ability to edit or delete stories through a dropdown menu attached to each story item  
   * Getting the dropdown menus to open individually took me quite some time to implement and I eventually decided to use the event to find the current target and siblings to access the individual dropdown menus instead of using the class name
 
