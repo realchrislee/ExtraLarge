@@ -21,9 +21,6 @@ class StoryForm extends React.Component {
     if (this.props.formType === 'edit') {
       this.props.fetchStory(this.props.match.params.id);
     }
-    // if (this.props.errors) {
-    //   this.props.clearErrors(this.props.errors);
-    // }
   }
 
   componentWillReceiveProps(newProps) {
@@ -52,10 +49,6 @@ class StoryForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // $('#publish').css({ cursor: 'wait' });
-    // document.getElementById('publish').disabled = 'disabled';
-    // document.getElementById('publish').value = 'Publishing';
-    // document.getElementById('root').addEventListener('onStateChange', () => (document.getElementById('publish').disabled = ''));
     const file = this.state.imageFile;
     let formData = new FormData();
     formData.append("story[title]", this.state.title);
